@@ -1,0 +1,29 @@
+# name: Auto-migration
+# on:
+#   push:
+#     branches:
+#       - main
+# jobs:
+#   general:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: joshuaavalon/flyway-action@v3.0.0
+#         with:
+#           url: ${{ secrets.GENERAL_URL }}
+#           user: ${{ secrets.USER_NAME }}
+#           password: ${{ secrets.PASSWORD }}
+#           locations: filesystem:./langgeneral/sql
+#       - run: echo 'testing'
+
+#   tracking:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: joshuaavalon/flyway-action@v3.0.0
+#         with:
+#           url: ${{ secrets.TRACKING_URL }}
+#           user: ${{ secrets.USER_NAME }}
+#           password: ${{ secrets.PASSWORD }}
+#           locations: filesystem:./langtracking/sql
+#       - run: echo 'testing'
